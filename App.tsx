@@ -1,25 +1,27 @@
-import Animated, {
-  useSharedValue,
-  withTiming,
-  useAnimatedStyle,
-  Easing,
-} from "react-native-reanimated";
-import { View, Button } from "react-native";
+// import Animated, {
+//   useSharedValue,
+//   withTiming,
+//   useAnimatedStyle,
+//   Easing,
+// } from "react-native-reanimated";
+import { View } from "react-native";
 import React from "react";
 
+import Button from "./participants/ElKubok/01_pump_me";
+
 export default function AnimatedStyleUpdateExample() {
-  const randomWidth = useSharedValue(10);
+  // const randomWidth = useSharedValue(10);
 
-  const config = {
-    duration: 500,
-    easing: Easing.bezier(0.5, 0.01, 0, 1),
-  };
+  // const config = {
+  // duration: 500,
+  // easing: Easing.bezier(0.5, 0.01, 0, 1),
+  // };
 
-  const style = useAnimatedStyle(() => {
-    return {
-      width: withTiming(randomWidth.value, config),
-    };
-  });
+  // const style = useAnimatedStyle(() => {
+  //   return {
+  //     width: withTiming(randomWidth.value, config),
+  //   };
+  // });
 
   return (
     <View
@@ -30,18 +32,19 @@ export default function AnimatedStyleUpdateExample() {
         flexDirection: "column",
       }}
     >
-      <Animated.View
+      {/* <Animated.View
         style={[
           { width: 100, height: 80, backgroundColor: "black", margin: 30 },
           style,
         ]}
-      />
-      <Button
+      /> */}
+      {/* <Button
         title="toggle"
         onPress={() => {
           randomWidth.value = Math.random() * 350;
         }}
-      />
+      /> */}
+      <Button />
     </View>
   );
 }
