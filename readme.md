@@ -18,7 +18,7 @@ We will review all projects together and choose the best solution / design / cod
  - 5 kudos from TL
  - kudos rain from each participant
 
-## [1] Week 1 - BB - Pump me
+## [1] Week 1 - BB - Pump me [FINISHED]
 
 | | |
 | ----------- | ----------- |
@@ -27,6 +27,7 @@ We will review all projects together and choose the best solution / design / cod
 | End | 28.09.2021 16:30 |
 | Who | BB |
 | Next animation challenge | Bob |
+| Winner | BB |
 
 ### Goals
 - [ ] Create rounded touchable element r=40
@@ -36,3 +37,23 @@ We will review all projects together and choose the best solution / design / cod
   - [ ] When you release element should go back to its initial size (animation should be smooth)
   - [ ] When you press again when its size decreases, animation should start from its current size
   - [ ] Create PR and mark all other participants as reviewers
+
+## [2] Week 2 - Bob - Tomato catapult
+
+| | |
+| ----------- | ----------- |
+| Start | 29.09.2021 |
+| PR | 12.10.2021 16:30 |
+| End | 12.10.2021 16:30 |
+| Who | Bob |
+| Next animation challenge | Gosia |
+| Winner | ? |
+
+### Goals
+- [ ] Create a horizontal brown line across the screen
+- [ ] Create smaller "wall" View with gray color with 80% of width and height
+- [ ] This should be touchable (react-native-gesture-handler)
+- [ ] Upon swiping down it should bend - bend animation should follow finger
+- [ ] On tearing a new potato should be placed under finger
+- [ ] On release potato should fire and smash on the wall
+- [ ] Position where tomato land on a wall should be random
