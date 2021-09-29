@@ -50,10 +50,11 @@ We will review all projects together and choose the best solution / design / cod
 | Winner | ? |
 
 ### Goals
-- [ ] Create a horizontal brown line across the screen
+
 - [ ] Create smaller "wall" View with gray color with 80% of width and height
-- [ ] This should be touchable (react-native-gesture-handler)
-- [ ] Upon swiping down it should bend - bend animation should follow finger
-- [ ] On tearing a new potato should be placed under finger
-- [ ] On release potato should fire and smash on the wall
+- [ ] Create a horizontal brown line across the screen
+  - [ ] This should be touchable (react-native-gesture-handler)
+  - [ ] Upon swiping down it should bend - bend animation should follow finger
+  - [ ] On tearing a new potato should be placed under finger
+  - [ ] On release potato should fire and smash on the wall
 - [ ] Position where tomato land on a wall should be random
