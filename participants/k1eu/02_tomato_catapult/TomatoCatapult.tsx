@@ -15,17 +15,19 @@ import Animated, {
 import Tomato from "./components/Tomato";
 import TomatoSplash from "./components/TomatoSplash";
 import Wall from "./components/Wall";
-import styles, {
-  WALL_HEIGHT_SCALE,
-  WALL_WIDTH_SCALE,
-  TOMATO_HEIGHT,
-  TOMATO_WIDTH,
-} from "./styles";
+import styles, { TOMATO_HEIGHT, TOMATO_WIDTH } from "./styles";
 
 type Splash = {
   top: number;
   left: number;
 };
+
+type AnimationContext = {
+  y: number,
+  x: number,
+  tomatoX: number,
+  tomatoY: number,
+}
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
@@ -38,18 +40,8 @@ const INITIAL_BEND_Y = (50 * LINE_Y_SCALE) / 100;
 const TOMATO_INITIAL_X = INITIAL_BEND_X - TOMATO_WIDTH / 2;
 const TOMATO_INITIAL_Y = height / 2 + INITIAL_BEND_Y - TOMATO_WIDTH / 2;
 
-const BOUNDARIES = {
-  minX: Math.ceil((width * (1 - WALL_WIDTH_SCALE)) / 2),
-  maxX: Math.floor(
-    width * (WALL_WIDTH_SCALE + (1 - WALL_WIDTH_SCALE) / 2) - TOMATO_WIDTH
-  ),
-  minY: Math.ceil((height * (1 - WALL_HEIGHT_SCALE)) / 2),
-  maxY: Math.floor(height / 2 - TOMATO_HEIGHT / 2),
-};
-
 export default function AnimatedStyleUpdateExample() {
   const [splashes, setSplashes] = useState<Splash[]>([] as Splash[]);
-  const { minX, maxX, minY, maxY } = BOUNDARIES;
 
   const curveY = useSharedValue(INITIAL_BEND_Y);
   const curveX = useSharedValue(INITIAL_BEND_X);
@@ -61,41 +53,34 @@ export default function AnimatedStyleUpdateExample() {
     setSplashes([...splashes, { top: splash.top, left: splash.left }]);
   };
 
-  const delayTomato = () => {
-    isTomatoVisible.value = true;
-  };
-
   const eventHandler = useAnimatedGestureHandler({
-    onStart: (
-      _,
-      ctx: { y: number; x: number; tomatoX: number; tomatoY: number }
-    ) => {
+    onStart: (_, ctx: AnimationContext ) => {
       tomatoX.value = TOMATO_INITIAL_X;
       tomatoY.value = TOMATO_INITIAL_Y;
-      runOnJS(delayTomato)(); //prevents tomato from appearing on old splash point
       ctx.y = curveY.value;
       ctx.x = curveX.value;
       ctx.tomatoY = tomatoY.value;
       ctx.tomatoX = tomatoX.value;
     },
     onActive: (event, ctx) => {
+      isTomatoVisible.value = true;
       curveX.value = ctx.x + event.translationX;
       curveY.value = ctx.y + event.translationY * 0.2;
       tomatoX.value = ctx.tomatoX + event.translationX / 2;
       tomatoY.value = ctx.tomatoY + event.translationY;
     },
     onEnd: () => {
-      const randomXDestination = Math.random() * (maxX - minX) + minX;
-      const randomYDestination = Math.random() * (maxY - minY) + minY;
+      const desiredXDestination = width - tomatoX.value - TOMATO_WIDTH;
+      const desiredYDestination = height - tomatoY.value - TOMATO_HEIGHT;
 
       if (curveY.value > INITIAL_BEND_Y) {
-        tomatoX.value = withTiming(randomXDestination);
-        tomatoY.value = withTiming(randomYDestination, {}, (finished) => {
+        tomatoX.value = withTiming(desiredXDestination);
+        tomatoY.value = withTiming(desiredYDestination, {}, (finished) => {
           if (finished) {
             isTomatoVisible.value = false;
             runOnJS(addNewSplash)({
-              top: randomYDestination,
-              left: randomXDestination,
+              top: desiredYDestination,
+              left: desiredXDestination,
             });
           }
         });
