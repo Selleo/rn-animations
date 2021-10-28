@@ -33,9 +33,6 @@ const newPotato = () => {
 
 export default () => {
   const [potatos, setPotatos] = useState([newPotato()]);
-
-  const originalPath = "M 0 2 C 20 2 30 2 50 2";
-  const path = useSharedValue(originalPath);
   const screenWith = useSharedValue(width);
   const y = useSharedValue(20);
   const x = useSharedValue(width / 2);
@@ -93,8 +90,11 @@ export default () => {
 
   return (
     <View style={styles.main}>
-      <PanGestureHandler onGestureEvent={gestureHandler}>
-        <Animated.View style={{ zIndex: 4 }}>
+      <PanGestureHandler
+        style={{ elevation: 4 }}
+        onGestureEvent={gestureHandler}
+      >
+        <Animated.View style={{ zIndex: 4, elevation: 4 }}>
           <AnimatedSvg
             style={styles.touchable}
             viewBox="5 5 40 40"
@@ -106,7 +106,7 @@ export default () => {
           </AnimatedSvg>
         </Animated.View>
       </PanGestureHandler>
-      <View style={styles.wall}>
+      {/* <View style={styles.wall}>
         {potatos.map((potato, index) => (
           <SplashedPotato
             key={index}
@@ -120,7 +120,7 @@ export default () => {
             height={60}
           ></SplashedPotato>
         ))}
-      </View>
+      </View> */}
     </View>
   );
 };
