@@ -10,6 +10,10 @@ export const paths: Paths = {
       name: "Tomato thrower",
       component: lazy(() => import("@participants/bb/02_tomato_thrower")),
     },
+    {
+      name: "Stickers",
+      component: lazy(() => import("@participants/bb/03_stickers")),
+    },
   ],
   bob: [
     {
