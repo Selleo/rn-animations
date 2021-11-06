@@ -15,7 +15,7 @@ const initialHeight = 50;
 const initialWidth = 100;
 const maxWidth = Dimensions.get("screen").width * 0.9;
 
-export default () => {
+const PumpMe = () => {
   const nextPumpTimout = useRef<any>();
   const isPumping = useRef(false);
   const animatedHight = useSharedValue(initialHeight);
@@ -84,3 +84,5 @@ export default () => {
     </View>
   );
 };
+
+export default PumpMe;
