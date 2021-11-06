@@ -22,12 +22,12 @@ function AvatarHive() {
 
   const renderRow = (from: number, to: number) => (
     <View style={styles.row}>
-      {people.slice(from, to).map((person, index) => (
+      {people.slice(from, to).map(([personKey, person], index) => (
         <Avatar
-          key={person[0]}
-          img={person[1].img}
+          key={personKey}
+          img={person.img}
           style={{ marginLeft: index === 0 ? 0 : 10 }}
-          onPress={navigateTo(person[0])}
+          onPress={navigateTo(personKey)}
         />
       ))}
     </View>

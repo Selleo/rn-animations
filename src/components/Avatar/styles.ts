@@ -17,4 +17,8 @@ export default StyleSheet.create({
     width: IMG_SIZE + 4,
     height: IMG_SIZE + 4,
   },
+  image: {
+    height: IMG_SIZE,
+    width: IMG_SIZE,
+  }
 });

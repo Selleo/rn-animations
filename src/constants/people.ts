@@ -28,6 +28,6 @@ export const People: People = {
 type People = {
   [key: string]: {
     displayName: string;
-    img: string;
+    img: number;
   };
 };

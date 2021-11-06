@@ -1,1 +1,1 @@
-export { default } from './Catapult'
+export { default } from "./Catapult";

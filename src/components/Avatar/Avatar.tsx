@@ -2,11 +2,11 @@ import React from "react";
 import { Image, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import styles, { IMG_SIZE } from "./styles";
+import styles from "./styles";
 import { primaryColor, secondaryColor } from "@styles/constants";
 
 type Props = {
-  img: string;
+  img: number;
   style?: object;
   onPress?: () => void;
 };
@@ -22,10 +22,7 @@ function Avatar(props: Props) {
       <Pressable style={styles.container} onPress={onPress}>
         <Image
           source={img}
-          style={{
-            height: IMG_SIZE,
-            width: IMG_SIZE,
-          }}
+          style={styles.image}
         />
       </Pressable>
     </LinearGradient>

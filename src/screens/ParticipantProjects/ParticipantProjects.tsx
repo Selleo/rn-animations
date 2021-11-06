@@ -5,14 +5,16 @@ import { useRoute, RouteProp } from "@react-navigation/native";
 import { MainStackParamList } from "@components/MainStack/MainStack";
 import { Avatar } from "@components/Avatar";
 import { People } from "@src/constants/people";
-import ProjectList from "@components/ProjectList/ProjectList";
+import { ProjectList } from "@components/ProjectList";
 
-import styles from './styles';
+import styles from "./styles";
 
 type Route = RouteProp<MainStackParamList, "ParticipantProjects">;
 
 function ParticipantProjects() {
-  const { params: { id } } = useRoute<Route>();
+  const {
+    params: { id },
+  } = useRoute<Route>();
 
   return (
     <View style={styles.container}>

@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator<MainStackParamList>();
 export type MainStackParamList = {
   Home: undefined;
   ParticipantProjects: { id: string };
-  ProjectView: { id: string, name: string };
+  ProjectView: { id: string; name: string };
 };
 
 const MainStack = () => {

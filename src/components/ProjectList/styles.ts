@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   listContainer: {
@@ -15,4 +15,4 @@ export default StyleSheet.create({
     borderTopWidth: 1,
     paddingVertical: 12,
   },
-})
+});
