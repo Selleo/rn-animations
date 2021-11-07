@@ -2,13 +2,19 @@
 
 The goal of this project is to get familiar with Reanimated V2 API. We decided to create a challenge to grow our skills. Feel free to join and play with the greatest React Native animation api so far.
 
-## Rules
+## Schedule
 
 - we meet every two Tuesdays at 16:30
 - you have two weeks to complete animation
+- under special circumstances the challenge can be postponed
+- for up-to-date information visit `react-native` slack channel
+
+## Rules
+
 - use [Reanimated v2 API](https://docs.swmansion.com/react-native-reanimated/docs)
-- you should put your code to your personal directory `/participants/[your_name]/[animation_number]`
-- do not modify any files out of your personal directory
+- you should put your code to your personal directory `/participants/[your_name]/[animation_number_and_name]`
+- you should modify `src/constants/paths.ts` file accordingly to have your new animation listed
+- do not modify any files out of your personal directory or the paths mentioned above
 - do not modify others work
 - create your own directory in `/participants` if it does not exists yet
 - do not cheat - we will review and talk about problems every two Tuesdays
@@ -51,7 +57,7 @@ We will review all projects together and choose the best solution / design / cod
 | End                      | 12.10.2021 16:30 |
 | Who                      | Bob              |
 | Next animation challenge | Gosia            |
-| Winner                   | ?                |
+| Winner                   | k1eu             |
 
 ### Goals
 
@@ -68,8 +74,8 @@ We will review all projects together and choose the best solution / design / cod
 |                          |                  |
 | ------------------------ | ---------------- |
 | Start                    | 13.10.2021       |
-| PR                       | 26.10.2021 16:30 |
-| End                      | 26.10.2021 16:30 |
+| PR                       | 09.11.2021 11:30 |
+| End                      | 09.11.2021 11:30 |
 | Who                      | Gosia            |
 | Next animation challenge | ?                |
 | Winner                   | ?                |

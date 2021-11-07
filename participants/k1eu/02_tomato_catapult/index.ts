@@ -1,1 +1,1 @@
-export { default as TomatoCatapult } from "./TomatoCatapult";
+export { default } from "./TomatoCatapult";
