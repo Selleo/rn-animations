@@ -37,6 +37,10 @@ export const paths: Paths = {
       name: "02_tomato_catapult",
       component: lazy(() => import("@participants/k1eu/02_tomato_catapult")),
     },
+    {
+      name: "03_sticky_notes",
+      component: lazy(() => import("@participants/k1eu/03_sticky_notes")),
+    },
   ],
   matro: [],
 };
