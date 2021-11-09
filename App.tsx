@@ -1,3 +1,12 @@
-import Bob from "./participants/Bob/02_tomato_catapult";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 
-export default Bob;
+import { MainStack } from "@components/MainStack";
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MainStack />
+    </NavigationContainer>
+  );
+}

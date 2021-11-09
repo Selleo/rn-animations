@@ -1,6 +1,16 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "baseUrl": ".",
+    "module": "ESNext",
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@components/*": ["src/components/*"],
+      "@participants/*": ["participants/*"],
+      "@screens/*": ["src/screens/*"],
+      "@src/*": ["src/*"],
+      "@styles/*": ["src/styles/*"],
+    }
   }
 }
