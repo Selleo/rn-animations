@@ -71,14 +71,14 @@ We will review all projects together and choose the best solution / design / cod
 
 ## [3] Week 3 - Gosia - Stickers
 
-|                          |                  |
-| ------------------------ | ---------------- |
-| Start                    | 13.10.2021       |
-| PR                       | 09.11.2021 11:30 |
-| End                      | 09.11.2021 11:30 |
-| Who                      | Gosia            |
-| Next animation challenge | ?                |
-| Winner                   | ?                |
+|                          |                      |
+| ------------------------ | -------------------- |
+| Start                    | 13.10.2021           |
+| PR                       | 09.11.2021 11:30     |
+| End                      | 09.11.2021 11:30     |
+| Who                      | Gosia                |
+| Next animation challenge | matro                |
+| Winners                  | BB, Bob, k1eu, Gosia |
 
 ### Goals
 
@@ -88,3 +88,26 @@ We will review all projects together and choose the best solution / design / cod
 - [ ] Add sticking and unsticking animation
 - [ ] When draging sticker, add shadow indication that it is in the air.
 - [ ] (Optional) Add possibility to draw on screen in different colors. Lines should be show below stickers
+
+## [4] Week 4 - matro - Curling
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 16.10.2021 |
+| PR                       | ?          |
+| End                      | ?          |
+| Who                      | matro      |
+| Next animation challenge | ?          |
+| Winner                   | ?          |
+
+### Goals
+
+- [ ] Make a simple curling game with one target point placed horizontally in the middle of the screen and vertically 20% height from the top (2D view from above the game field)
+- [ ] There's a horizontal "throwing line" at 20% screen height from the bottom of the screen
+- [ ] You have one kettle (alright... it's called the stone as wikipedia claims) to throw at the target
+- [ ] The throwing line separates the bottom "aiming field" from the upper "target field"
+- [ ] You can control the stone with your finger only while it's on the aiming field
+- [ ] When the stone crosses the throwing line, you lose control over it and the stone continues the travel up on the target field based on the force that you gave it releasing it
+- [ ] The stone should gradually lose speed based on the amount of initial speed given on release
+- [ ] When the stone stops, you calculate and display the distance from the target
+- [ ] 1 second after stopping on the target field, the stone is being reset back to the aiming field
