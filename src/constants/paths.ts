@@ -16,6 +16,14 @@ export const paths: Paths = {
       name: "01_pump_me",
       component: lazy(() => import("@participants/bob/01_pump_me")),
     },
+    {
+      name: "02 Tomato Catapult",
+      component: lazy(() => import("@participants/bob/02_tomato_catapult")),
+    },
+    {
+      name: "03 Stickers",
+      component: lazy(() => import("@participants/bob/03_stickers/Stickers")),
+    },
   ],
   elkubok: [],
   gosia: [
