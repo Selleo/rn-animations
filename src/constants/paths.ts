@@ -14,6 +14,10 @@ export const paths: Paths = {
       name: "Stickers",
       component: lazy(() => import("@participants/bb/03_stickers")),
     },
+    {
+      name: "Curling",
+      component: lazy(() => import("@participants/bb/04_curling")),
+    },
   ],
   bob: [
     {
