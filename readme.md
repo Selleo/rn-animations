@@ -94,11 +94,11 @@ We will review all projects together and choose the best solution / design / cod
 |                          |            |
 | ------------------------ | ---------- |
 | Start                    | 16.10.2021 |
-| PR                       | ?          |
-| End                      | ?          |
+| PR                       | 30.11.2021 |
+| End                      | 30.11.2021 |
 | Who                      | matro      |
-| Next animation challenge | ?          |
-| Winner                   | ?          |
+| Next animation challenge | k1eu       |
+| Winner                   | BB         |
 
 ### Goals
 
@@ -111,3 +111,28 @@ We will review all projects together and choose the best solution / design / cod
 - [ ] The stone should gradually lose speed based on the amount of initial speed given on release
 - [ ] When the stone stops, you calculate and display the distance from the target
 - [ ] 1 second after stopping on the target field, the stone is being reset back to the aiming field
+
+## [5] Week 5 - k1eu - Apartment's swipee
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 06.12.2021 |
+| PR                       | 21.12.2021 |
+| End                      | 21.12.2021 |
+| Who                      | k1eu       |
+| Next animation challenge | TBD        |
+| Winner                   | TBD        |
+
+### Goals
+
+- [ ] Make a bottom tab navigator with main `Apartments View`
+- [ ] Create Aparments Card slider with where both previous and next cards are visible (just a little)
+- [ ] When the user swipes, next card should go to the middle and scale just a bit
+- [ ] When the use clicks there should be an enter in animation which connects with the previous screen (so it looks smooth :sweetJesus:)
+- [ ] Optional (gif 1)* - Create a view that rolls out from below the tab navigator (we can call it `My favourites` - content doesn't matter) 
+- [ ] There are examples below :)
+
+<p>
+  <img src="https://cdn.dribbble.com/users/3421391/screenshots/6978055/airbnb_3.gif" width="350">
+  <img src="https://cdn.dribbble.com/users/3687894/screenshots/6680064/upload.gif" width="350">
+</p>
