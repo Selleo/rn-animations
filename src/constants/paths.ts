@@ -42,16 +42,20 @@ export const paths: Paths = {
   ],
   k1eu: [
     {
-      name: "01_pump_me",
+      name: "Pump my button",
       component: lazy(() => import("@participants/k1eu/01_pump_me")),
     },
     {
-      name: "02_tomato_catapult",
+      name: "Tomato Catapult",
       component: lazy(() => import("@participants/k1eu/02_tomato_catapult")),
     },
     {
-      name: "03_sticky_notes",
+      name: "Sticky Notes",
       component: lazy(() => import("@participants/k1eu/03_sticky_notes")),
+    },
+    {
+      name: "Curling",
+      component: lazy(() => import("@participants/k1eu/04_curling")),
     },
   ],
   matro: [],
