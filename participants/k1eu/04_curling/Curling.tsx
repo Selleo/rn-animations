@@ -75,7 +75,6 @@ export default function Curling() {
           {
             velocity: event.velocityY,
           }, () => {
-            console.log(event.x)
             runOnJS(setDistance)({
               // x: AIM_CENTER_X - Math.abs(TOMATO_START_X - tomatoX.value + event.translationX),
               x: AIM_CENTER_X - event.x,
