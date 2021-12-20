@@ -32,6 +32,10 @@ export const paths: Paths = {
       name: "03 Stickers",
       component: lazy(() => import("@participants/bob/03_stickers/Stickers")),
     },
+    {
+      name: "04 Currling",
+      component: lazy(() => import("@participants/bob/04_curling")),
+    },
   ],
   elkubok: [],
   gosia: [
