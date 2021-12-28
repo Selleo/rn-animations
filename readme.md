@@ -129,7 +129,7 @@ We will review all projects together and choose the best solution / design / cod
 - [ ] Create Aparments Card slider with where both previous and next cards are visible (just a little)
 - [ ] When the user swipes, next card should go to the middle and scale just a bit
 - [ ] When the use clicks there should be an enter in animation which connects with the previous screen (so it looks smooth :sweetJesus:)
-- [ ] Optional (gif 1)\* - Create a view that rolls out from below the tab navigator (we can call it `My favourites` - content doesn't matter)
+- [ ] Optional (gif 1)* - Create a view that rolls out from below the tab navigator (we can call it `My favourites` - content doesn't matter) 
 - [ ] There are examples below :)
 
 <p>
