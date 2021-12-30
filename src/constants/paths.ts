@@ -91,6 +91,7 @@ export const paths: Paths = {
     },
   ],
   matro: [],
+  monika: [],
 };
 
 type Paths = {

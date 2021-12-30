@@ -7,7 +7,7 @@ import { MainStackParamList } from "@components/MainStack/MainStack";
 import { Avatar } from "@components/Avatar";
 import { People } from "@src/constants/people";
 
-import styles from './styles';
+import styles from "./styles";
 
 type Navigation = NativeStackNavigationProp<MainStackParamList>;
 
@@ -37,7 +37,7 @@ function AvatarHive() {
     <View style={styles.container}>
       {renderRow(0, 3)}
       {renderRow(3, 5)}
-      {renderRow(5, 6)}
+      {renderRow(5, 7)}
     </View>
   );
 }
