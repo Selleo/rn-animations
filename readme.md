@@ -136,3 +136,26 @@ We will review all projects together and choose the best solution / design / cod
   <img src="https://cdn.dribbble.com/users/3421391/screenshots/6978055/airbnb_3.gif" width="350">
   <img src="https://cdn.dribbble.com/users/3687894/screenshots/6680064/upload.gif" width="350">
 </p>
+
+## [6] Week 5 - damcyk - Waleet
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 28.12.2021 |
+| PR                       | 11.01.2022 |
+| End                      | 11.01.2022 |
+| Who                      | damcyk     |
+| Next animation challenge | TBD        |
+| Winner                   | TBD        |
+
+### Goals
+
+- [ ] Example: https://dribbble.com/shots/6713486-2-FREE-Touch-Gesture-Animations-interactions-for-after-effects
+- [ ] Create a wallet view with rolled-up cards and button to add new card
+- [ ] It should be possible to see details of card on press (currency with amount - for example cryptocurrency like on dribbble)
+- [ ] (On details view) - when the user press again card, the view should get back
+- [ ] Card can be just image (easier solution)
+
+<p>
+  <img src="https://cdn.dribbble.com/users/20248/screenshots/6713486/output__2_.gif" width="350">
+</p>
