@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Text, View, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -10,9 +10,10 @@ import Animated, {
   SlideOutDown,
 } from "react-native-reanimated";
 
-import { transactions } from "./components/transactionList";
 import MyCard from "./components/MyCard";
 import Button from "./components/Button";
+import { CARDS_OVERLAY, CARD_HEIGHT, MARGIN } from "./components/constants";
+import Transactions from "./components/Transactions";
 
 const Waleet = () => {
   const [cards, setCards] = useState([
@@ -58,9 +59,9 @@ const Waleet = () => {
     const height = mix(
       transition.value,
       view === "hide" || previousState.current === "hide"
-        ? cards.length * 30 + 200
-        : 200,
-      cards.length * 220
+        ? cards.length - 1 * CARDS_OVERLAY + CARD_HEIGHT
+        : CARD_HEIGHT,
+      cards.length * (CARD_HEIGHT + MARGIN)
     );
     return {
       height,
@@ -69,7 +70,7 @@ const Waleet = () => {
   const animatedHeaderHeight = useAnimatedStyle(() => {
     const height = mix(
       transition.value,
-      view === "hide" || previousState.current === "hide" ? 30 : 0,
+      view === "hide" || previousState.current === "hide" ? 40 : 0,
       0
     );
     return {
@@ -81,8 +82,10 @@ const Waleet = () => {
     return useAnimatedStyle(() => {
       const translateY = mix(
         transition.value,
-        view === "hide" || previousState.current === "hide" ? index * 30 : 0,
-        index * 220
+        view === "hide" || previousState.current === "hide"
+          ? index * CARDS_OVERLAY
+          : 0,
+        index * (CARD_HEIGHT + MARGIN)
       );
       return {
         transform: [{ translateY }],
@@ -92,7 +95,7 @@ const Waleet = () => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, marginTop: 20 }}>
       <Animated.View
         entering={FadeIn.delay(500)}
         exiting={SlideOutDown}
@@ -103,12 +106,18 @@ const Waleet = () => {
         </Text>
       </Animated.View>
       <ScrollView>
-        <Animated.View style={animatedContainerHeight}>
+        <Animated.View
+          style={[{ marginLeft: MARGIN }, animatedContainerHeight]}
+        >
           {cards.map((card, index) => {
             return (
               <Animated.View
                 style={[
-                  { position: "absolute", top: 0, left: 0 },
+                  {
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  },
                   cardAnimation(index, card.id),
                 ]}
                 key={index}
@@ -122,19 +131,13 @@ const Waleet = () => {
             );
           })}
         </Animated.View>
-
-        {view === "detail" &&
-          transactions.map((item, index) => (
-            <Animated.View entering={FadeIn.delay(700 + index * 200)}>
-              <Text key={item.id}>{item.shop}</Text>
-            </Animated.View>
-          ))}
+        {view === "detail" && <Transactions />}
       </ScrollView>
 
       {view === "hide" && (
         <Button
           onPress={() => console.log("add new card")}
-          delay={!previousState.current ? 1200 + cards.length * 200 : 500}
+          delay={!previousState.current ? 1200 + cards.length * 200 : 800}
         />
       )}
     </View>

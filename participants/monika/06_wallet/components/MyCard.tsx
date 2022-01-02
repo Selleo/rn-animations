@@ -7,6 +7,7 @@ import {
   TapGestureHandlerStateChangeEvent,
   LongPressGestureHandlerStateChangeEvent,
 } from "react-native-gesture-handler";
+import { CARD_HEIGHT, CARD_WIDTH } from "./constants";
 interface Props {
   card: {
     id: number;
@@ -15,8 +16,6 @@ interface Props {
   onClick: (cardId: number) => void;
   onDoubleClick: () => void;
 }
-
-const CARD_HEIGHT = 200;
 
 const MyCard = (props: Props) => {
   const {
@@ -55,8 +54,8 @@ const MyCard = (props: Props) => {
             style={{
               backgroundColor: color,
               height: CARD_HEIGHT,
-              width: 300,
-              borderRadius: 40,
+              width: CARD_WIDTH,
+              borderRadius: 20,
             }}
           ></Animated.View>
         </TapGestureHandler>
