@@ -17,10 +17,10 @@ import Transactions from "./components/Transactions";
 
 const Waleet = () => {
   const [cards, setCards] = useState([
-    { id: 1, color: "red" },
-    { id: 2, color: "green" },
-    { id: 3, color: "blue" },
-    { id: 4, color: "purple" },
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
   ]);
   const [view, setView] = useState("hide");
   const [currentCard, setCurrentCard] = useState<number | null>(null);
@@ -46,13 +46,14 @@ const Waleet = () => {
   const onCardClick = (id: number) => {
     previousState.current = view;
     view === "hide" && setView("expand");
-    view === "expand" && setView("detail");
-    view === "expand" && setCurrentCard(id);
+    view === "expand" && (setView("detail"), setCurrentCard(id));
     view === "detail" && setView("expand");
   };
   const onDoubleCardClick = () => {
-    view === "expand" && setView("hide");
-    view === "expand" && setCurrentCard(null);
+    if (view === "expand") {
+      setView("hide");
+      setCurrentCard(null);
+    }
   };
 
   const animatedContainerHeight = useAnimatedStyle(() => {

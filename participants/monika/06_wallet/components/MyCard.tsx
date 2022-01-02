@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "react-native";
 import Animated, { ZoomInEasyDown } from "react-native-reanimated";
 import {
   TapGestureHandler,
@@ -11,7 +12,6 @@ import { CARD_HEIGHT, CARD_WIDTH } from "./constants";
 interface Props {
   card: {
     id: number;
-    color: string;
   };
   onClick: (cardId: number) => void;
   onDoubleClick: () => void;
@@ -19,22 +19,26 @@ interface Props {
 
 const MyCard = (props: Props) => {
   const {
-    card: { color, id },
+    card: { id },
     onClick,
     onDoubleClick,
   } = props;
 
   const longPressRef = React.createRef<TapGestureHandler>();
-
+  const picture = {
+    1: require(`../assets/card1.jpeg`),
+    2: require(`../assets/card2.jpeg`),
+    3: require(`../assets/card3.jpeg`),
+    4: require(`../assets/card4.jpeg`),
+    5: require(`../assets/card5.jpeg`),
+  };
   const onSingleTap = (event: TapGestureHandlerStateChangeEvent) => {
     if (event.nativeEvent.state === State.ACTIVE) {
-      console.log("I'm touched", color);
       onClick(id);
     }
   };
   const onLongPress = (event: LongPressGestureHandlerStateChangeEvent) => {
     if (event.nativeEvent.state === State.ACTIVE) {
-      console.log("I'm double touched", color);
       onDoubleClick();
     }
   };
@@ -52,12 +56,21 @@ const MyCard = (props: Props) => {
           <Animated.View
             entering={ZoomInEasyDown.delay(200 * id - 1).duration(1200)}
             style={{
-              backgroundColor: color,
               height: CARD_HEIGHT,
               width: CARD_WIDTH,
-              borderRadius: 20,
             }}
-          ></Animated.View>
+          >
+            <Image
+              source={picture[id % 5]}
+              style={{
+                width: "100%",
+                height: "100%",
+                borderRadius: 20,
+                borderColor: "white",
+                borderWidth: 1,
+              }}
+            />
+          </Animated.View>
         </TapGestureHandler>
       </LongPressGestureHandler>
     </>
