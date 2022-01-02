@@ -91,7 +91,12 @@ export const paths: Paths = {
     },
   ],
   matro: [],
-  monika: [],
+  monika: [
+    {
+      name: "Wallet",
+      component: lazy(() => import("@participants/monika/06_wallet")),
+    },
+  ],
 };
 
 type Paths = {
