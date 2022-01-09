@@ -18,6 +18,10 @@ export const paths: Paths = {
       name: "Curling",
       component: lazy(() => import("@participants/bb/04_curling")),
     },
+    {
+      name: "Shared Elements",
+      component: lazy(() => import("@participants/bb/05_shared_transition")),
+    },
   ],
   bob: [
     {
