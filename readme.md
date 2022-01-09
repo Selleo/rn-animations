@@ -120,8 +120,8 @@ We will review all projects together and choose the best solution / design / cod
 | PR                       | 21.12.2021 |
 | End                      | 21.12.2021 |
 | Who                      | k1eu       |
-| Next animation challenge | TBD        |
-| Winner                   | TBD        |
+| Next animation challenge | damcyk     |
+| Winner                   | BOB        |
 
 ### Goals
 
@@ -137,7 +137,7 @@ We will review all projects together and choose the best solution / design / cod
   <img src="https://cdn.dribbble.com/users/3687894/screenshots/6680064/upload.gif" width="350">
 </p>
 
-## [6] Week 5 - damcyk - Waleet
+## [6] Week 6 - damcyk - Wallet
 
 |                          |            |
 | ------------------------ | ---------- |
