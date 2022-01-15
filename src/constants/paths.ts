@@ -1,4 +1,4 @@
-import { LazyExoticComponent, FC, lazy } from "react";
+import { FC, LazyExoticComponent, lazy } from "react";
 
 export const paths: Paths = {
   bb: [
@@ -54,6 +54,10 @@ export const paths: Paths = {
     {
       name: "02_tomato_catapult",
       component: lazy(() => import("@participants/gosia/02_tomato_catapult")),
+    },
+    {
+      name: "06_wallet",
+      component: lazy(() => import("@participants/gosia/06_wallet")),
     },
   ],
   k1eu: [
