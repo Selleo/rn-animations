@@ -10,7 +10,11 @@ export type RootStackParamList = {
   Properties: undefined;
 };
 
-const TabNavigator = createBottomTabNavigator();
+export type TabNavigatorParamList = {
+  PropertyStack: undefined;
+};
+
+const TabNavigator = createBottomTabNavigator<TabNavigatorParamList>();
 const Stack = createSharedElementStackNavigator<RootStackParamList>();
 
 const PropertyStack = () => {
