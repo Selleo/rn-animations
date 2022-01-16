@@ -21,7 +21,11 @@ const MainStack = () => {
         name="ParticipantProjects"
         component={ParticipantProjects}
       />
-      <Stack.Screen name="ProjectView" component={ProjectViewer} />
+      <Stack.Screen
+        name="ProjectView"
+        component={ProjectViewer}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 };

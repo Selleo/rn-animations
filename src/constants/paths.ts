@@ -22,6 +22,10 @@ export const paths: Paths = {
       name: "Shared Elements",
       component: lazy(() => import("@participants/bb/05_shared_transition")),
     },
+    {
+      name: "Wallet",
+      component: lazy(() => import("@participants/bb/06_wallet")),
+    },
   ],
   bob: [
     {
