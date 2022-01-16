@@ -73,6 +73,10 @@ export const paths: Paths = {
       name: "Curling",
       component: lazy(() => import("@participants/k1eu/04_curling")),
     },
+    {
+      name: "Apartments Swipee",
+      component: lazy(() => import("@participants/k1eu/05_apartments")),
+    },
   ],
   matro: [],
 };
