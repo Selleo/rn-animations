@@ -1,53 +1,72 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { type StackScreenProps } from '@react-navigation/stack';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { type StackScreenProps } from "@react-navigation/stack";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-import store from '../store';
-import { type StackParams } from '../components/Navigator/Navigator'
+import Animated, { FadeInUp, FadeOutDown } from "react-native-reanimated";
+import store from "../store";
+import { type StackParams } from "../components/Navigator/Navigator";
+import { SharedElement } from "react-navigation-shared-element";
+import { useSharedValue } from "react-native-reanimated";
+import Card from "../components/Card";
 
-type RouteProps = StackScreenProps<StackParams, 'Details'>['route'];
-type NavigationProps = StackScreenProps<StackParams, 'Details'>['navigation'];
-
-import Card from '../components/Card';
-import { SharedElement } from 'react-navigation-shared-element';
-import { useSharedValue } from 'react-native-reanimated';
+type RouteProps = StackScreenProps<StackParams, "Details">["route"];
+type NavigationProps = StackScreenProps<StackParams, "Details">["navigation"];
 
 const Details = () => {
-  const xd = useSharedValue(true)
-  const { params: { id }} = useRoute<RouteProps>();
+  const xd = useSharedValue(true);
+  const {
+    params: { id },
+  } = useRoute<RouteProps>();
   const navigation = useNavigation<NavigationProps>();
 
-  const cardData = store.find(i => i.id === id); 
+  const cardData = store.find((i) => i.id === id);
 
   const handleNavigation = (id: string) => {
     navigation.goBack();
-  }
+  };
 
   if (!cardData) {
-    handleNavigation('1')
+    handleNavigation("1");
   }
 
-
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <SharedElement id={`${cardData!.id}.card`}>
-        <Card data={cardData!} index={0} isListOpen={xd} onPress={handleNavigation}/>
+        <Card
+          data={cardData}
+          index={0}
+          isListOpen={xd}
+          onPress={handleNavigation}
+        />
       </SharedElement>
-      <Text>Transaction 1</Text>
-      <Text>Transaction 2</Text>
-      <Text>Transaction 3</Text>
-      <Text>Transaction 4</Text>
-    </View>
-  )
-}
+      {cardData?.transactions.map((transaction, index) => (
+        <Animated.View key={transaction.id} style={styles.transaction} entering={FadeInUp.delay(500 + 100 * index)} exiting={FadeOutDown}>
+          <View>
+            <Text style={styles.text}>{transaction.date}</Text>
+          </View>
+          <View>
+            <Text style={styles.text}>{transaction.amount}</Text>
+          </View>
+        </Animated.View>
+      ))}
+    </ScrollView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     paddingVertical: 20,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+  },
+  transaction: {
+    marginTop: 10,
+    flexDirection: "row",
+  },
+  text: {
+    fontSize: 20,
   }
-})
+});
 
-export default Details
+export default Details;

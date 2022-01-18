@@ -16,6 +16,7 @@ type Props = {
   index: number
   isListOpen: SharedValue<boolean>;
   onPress: (id: string) => void;
+  style?: ViewStyle;
 };
 
 import { cardHeight } from "../Card/styles";
@@ -24,7 +25,7 @@ const marginTop = cardHeight / 2;
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable)
 
-const Card = ({ data, isListOpen, index, onPress }: Props) => {
+const Card = ({ data, isListOpen, index, onPress, style }: Props) => {
   const navigation = useNavigation<NavigationProps>();
   const route = useRoute<RouteProps>();
 
@@ -42,7 +43,7 @@ const Card = ({ data, isListOpen, index, onPress }: Props) => {
   }));
 
   return (
-    <AnimatedPressable style={[styles.cardWrapper, index !== 0 && animatedCardStyles]} onPress={onPressHandler}>
+    <AnimatedPressable style={[styles.cardWrapper, index !== 0 && animatedCardStyles, style ]} onPress={onPressHandler}>
       <Image style={styles.cardBackground} source={{ uri: data.image }}/>
       <View style={styles.cardDetails}>
         <Text style={styles.cardOwner}>{data.owner}</Text>
