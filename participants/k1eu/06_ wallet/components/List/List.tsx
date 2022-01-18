@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FlatList, View, Text, StyleSheet } from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
-import {
+import Animated, {
   runOnJS,
   useAnimatedScrollHandler,
   useAnimatedStyle,
@@ -14,13 +14,18 @@ import store, { type TCard } from "../../store";
 
 import Card from "../Card";
 import { StackParams } from "../Navigator/Navigator";
-import { Directions, Gesture, GestureDetector } from "react-native-gesture-handler";
+import {
+  Directions,
+  Gesture,
+  GestureDetector,
+} from "react-native-gesture-handler";
 
 type NavigationProps = StackScreenProps<StackParams, "Details">["navigation"];
 
 const List = () => {
   // const isListOpen = useState(false);
   const isListOpen = useSharedValue(true);
+  const upThreshold = useSharedValue(0);
   const isBeingDragged = useSharedValue(false);
   const navigation = useNavigation<NavigationProps>();
 
@@ -31,47 +36,54 @@ const List = () => {
     } else {
       isListOpen.value = true;
     }
-  }
+  };
 
-    const isScrolling = useSharedValue(false);
-    const translationY = useSharedValue(0);
-    const lastContentOffset = useSharedValue(0);
+  const isScrolling = useSharedValue(false);
+  const translationY = useSharedValue(0);
+  const lastContentOffset = useSharedValue(0);
 
-    const scrollHandler = useAnimatedScrollHandler({
-      // onScroll: (event) => {
-        // if (lastContentOffset.value > event.contentOffset.y) {
-        //   if (isScrolling.value) {
-        //     console.log("UP");
-        //   }
-        // } else if (lastContentOffset.value < event.contentOffset.y) {
-        //   if (isScrolling.value) {
-        //     console.log("DOWN");
-        //   }
-        // }
-        // lastContentOffset.value = event.contentOffset.y;
-      // },
-      onBeginDrag: (e) => {
-        isScrolling.value = true;
-      },
-      onEndDrag: (e) => {
-        isScrolling.value = false;
-      },
-    });
+  const scrollHandler = useAnimatedScrollHandler({
+    onScroll: (event) => {
+      if (lastContentOffset.value > event.contentOffset.y) {
+        if (isScrolling.value) {
+          console.log("UP");
+          isListOpen.value = false;
+        }
+      } else if (lastContentOffset.value < event.contentOffset.y) {
+        if (isScrolling.value) {
+          console.log("DOWN");
+          isListOpen.value = true;
+        }
+      }
+      lastContentOffset.value = event.contentOffset.y;
+    },
+    onBeginDrag: () => {
+      isScrolling.value = true;
+    },
+    onEndDrag: () => {
+      isScrolling.value = false;
+    },
+  });
 
   const renderItem = ({ item, index }: { item: TCard; index: number }) => (
-      <SharedElement id={`${item.id}.card`}>
-        <Card
-          data={item}
-          index={index}
-          isListOpen={isListOpen}
-          onPress={handlePress}
-        />
-      </SharedElement>
+    <SharedElement id={`${item.id}.card`}>
+      <Card
+        data={item}
+        index={index}
+        isListOpen={isListOpen}
+        onPress={handlePress}
+      />
+    </SharedElement>
   );
 
   return (
     <View style={styles.container}>
-      <FlatList data={store} renderItem={renderItem} />
+      <Animated.FlatList
+      //@ts-ignore
+        onScroll={scrollHandler}
+        data={store}
+        renderItem={renderItem}
+      />
     </View>
   );
 };
