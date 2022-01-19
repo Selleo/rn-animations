@@ -11,16 +11,16 @@ const Cards = () => {
   const [zIndexes, setZIndexes] = useState([0, 1, 2]);
 
   const switchTo = (newMode: number, cardIndex?: number) => {
+    const newZindexes = [0, 1, 2];
     if (cardIndex || cardIndex === 0) {
-      const newZindexes = [0, 0, 0];
-      newZindexes[cardIndex] = 1;
-      setZIndexes(newZindexes);
+      newZindexes[cardIndex] = 4;
     }
     if (cardsState.value === 2 && newMode === 2) {
       cardsState.value = 0;
     } else {
       cardsState.value = newMode;
     }
+    setZIndexes(newZindexes);
   };
 
   return (
