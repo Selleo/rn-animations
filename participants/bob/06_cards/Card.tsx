@@ -28,13 +28,18 @@ const Card = ({
   zIndex: number;
   index: number;
   cardsState: SharedValue<number>;
-  switchTo: (mode: number, cardNumber: number) => void;
+  switchTo: (mode: number, cardNumber?: number) => void;
 }) => {
   const gestureHander = useAnimatedGestureHandler({
-    onStart: (_, ctx) => {
-      // runOnJS(switchTo)(1);
+    onStart: (_, ctx) => {},
+    onActive: (event, ctx) => {
+      if (event.translationY < -40) {
+        runOnJS(switchTo)(1);
+      }
+      if (event.translationY > 40) {
+        runOnJS(switchTo)(0);
+      }
     },
-    onActive: (event, ctx) => {},
     onEnd: () => {},
   });
 
@@ -51,23 +56,21 @@ const Card = ({
     return { top: withSpring(0) };
   });
 
-  console.log({ zIndex });
-
   return (
-    <Animated.View
-      style={[
-        { backgroundColor: color, zIndex: zIndex },
-        styles.wrapper,
-        animStyles,
-      ]}
-    >
-      <PanGestureHandler onGestureEvent={gestureHander}>
+    <PanGestureHandler onGestureEvent={gestureHander}>
+      <Animated.View
+        style={[
+          { backgroundColor: color, zIndex: zIndex },
+          styles.wrapper,
+          animStyles,
+        ]}
+      >
         <TouchableOpacity
           style={{ width: "100%", height: "100%" }}
           onPress={() => switchTo(2, index)}
         ></TouchableOpacity>
-      </PanGestureHandler>
-    </Animated.View>
+      </Animated.View>
+    </PanGestureHandler>
   );
 };
 
