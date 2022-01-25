@@ -159,3 +159,30 @@ We will review all projects together and choose the best solution / design / cod
 <p>
   <img src="https://cdn.dribbble.com/users/20248/screenshots/6713486/output__2_.gif" width="350">
 </p>
+
+## [7] Week 7 - monika - Radial Menu
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 25.12.2022 |
+| PR                       | 01.02.2022 |
+| End                      | 11.01.2022 |
+| Who                      | monika     |
+| Next animation challenge | TBD        |
+| Winner                   | TBD        |
+
+### Goals
+
+- [ ] Create animated drawer with a radial menu
+- [ ] Drawer should expand with some nice animation, after expanding, a radial carousel should appeared on the screen
+- [ ] Each menu element should have an icon and label
+- [ ] The radial menu should be an infinite scroll (when the user reach the last menu item, the first element appears again)
+- [ ] When menu item is clicked, app should navigate to selected screen and drawer should smoothly hide
+- [ ] Example of drawer: https://dribbble.com/shots/6155653-Menu-Design 
+- [ ] Example of animation with radial menu: https://dribbble.com/shots/4574257-Porsche-Passport-Menu-Interaction
+
+<p>
+  <img src="https://cdn.dribbble.com/users/1106278/screenshots/6155653/dribbble_28_feb_2.png" width="350">
+  <img src="https://cdn.dribbble.com/users/2024752/screenshots/4574257/passport-dribbble-01.gif" width="350">
+</p>
+
