@@ -168,8 +168,8 @@ We will review all projects together and choose the best solution / design / cod
 | PR                       | 01.02.2022 |
 | End                      | 11.01.2022 |
 | Who                      | monika     |
-| Next animation challenge | TBD        |
-| Winner                   | TBD        |
+| Next animation challenge | BB         |
+| Winner                   | Monika     |
 
 ### Goals
 
@@ -185,4 +185,23 @@ We will review all projects together and choose the best solution / design / cod
   <img src="https://cdn.dribbble.com/users/1106278/screenshots/6155653/dribbble_28_feb_2.png" width="350">
   <img src="https://cdn.dribbble.com/users/2024752/screenshots/4574257/passport-dribbble-01.gif" width="350">
 </p>
+
+
+## [8] Week 8 - BB - Liquid animation
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 21.02.2022 |
+| PR                       | 11.03.2022 |
+| End                      | 11.03.2022 |
+| Who                      | BB         |
+| Next animation challenge | TBD        |
+| Winner                   | TBD        |
+
+### Goals
+
+- [ ] Create onboarding screen with at least 3 different steps
+- [ ] Add button, press should show next step
+- [ ] Add "fluid" animation - https://dribbble.com/shots/6654320-Animated-Onboarding-Screens
+- [ ] For code inspiration you can check https://www.youtube.com/watch?v=vQNg06Hf0MQ
 
