@@ -53,6 +53,42 @@ const store: TCard[] = [
         amount: '$100.00',
         vendor: 'Starbucks',
       },
+      {
+        id: '3',
+        date: '01/01/2020',
+        amount: '$100.00',
+        vendor: 'Starbucks',
+      },
+      {
+        id: '4',
+        date: '01/01/2020',
+        amount: '$100.00',
+        vendor: 'Starbucks',
+      },
+      {
+        id: '5',
+        date: '01/01/2020',
+        amount: '$100.00',
+        vendor: 'Starbucks',
+      },
+      {
+        id: '6',
+        date: '01/01/2020',
+        amount: '$100.00',
+        vendor: 'Starbucks',
+      },
+      {
+        id: '7',
+        date: '01/01/2020',
+        amount: '$100.00',
+        vendor: 'Starbucks',
+      },
+      {
+        id: '8',
+        date: '01/01/2020',
+        amount: '$100.00',
+        vendor: 'Starbucks',
+      },
     ]
   },
   {

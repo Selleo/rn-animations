@@ -1,11 +1,17 @@
-import { useState } from "react";
-import { FlatList, View, Text, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  Dimensions,
+} from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
 import Animated, {
-  runOnJS,
+  FadeInUp,
   useAnimatedScrollHandler,
   useAnimatedStyle,
   useSharedValue,
+  withTiming,
 } from "react-native-reanimated";
 import { useNavigation } from "@react-navigation/native";
 import { SharedElement } from "react-navigation-shared-element";
@@ -14,32 +20,28 @@ import store, { type TCard } from "../../store";
 
 import Card from "../Card";
 import { StackParams } from "../Navigator/Navigator";
-import {
-  Directions,
-  Gesture,
-  GestureDetector,
-} from "react-native-gesture-handler";
 
 type NavigationProps = StackScreenProps<StackParams, "Details">["navigation"];
 
+const { width } = Dimensions.get("screen");
+
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+
 const List = () => {
-  // const isListOpen = useState(false);
   const isListOpen = useSharedValue(true);
-  const upThreshold = useSharedValue(0);
-  const isBeingDragged = useSharedValue(false);
+  const shouldAnimate = useSharedValue(false);
   const navigation = useNavigation<NavigationProps>();
 
   const handlePress = (id: string) => {
     if (isListOpen.value === true) {
+      shouldAnimate.value = true;
       navigation.navigate("Details", { id });
-      // isListOpen.value = false;
     } else {
       isListOpen.value = true;
     }
   };
 
   const isScrolling = useSharedValue(false);
-  const translationY = useSharedValue(0);
   const lastContentOffset = useSharedValue(0);
 
   const scrollHandler = useAnimatedScrollHandler({
@@ -65,6 +67,15 @@ const List = () => {
     },
   });
 
+  const animatedButtonStyles = useAnimatedStyle(() => ({
+    opacity: withTiming(isListOpen.value ? 0 : 1),
+    transform: [
+      {
+        translateY: withTiming(isListOpen.value ? 200 : 0),
+      }
+    ]
+  }));
+
   const renderItem = ({ item, index }: { item: TCard; index: number }) => (
     <SharedElement id={`${item.id}.card`}>
       <Card
@@ -79,11 +90,17 @@ const List = () => {
   return (
     <View style={styles.container}>
       <Animated.FlatList
-      //@ts-ignore
+        //@ts-ignore
         onScroll={scrollHandler}
         data={store}
         renderItem={renderItem}
       />
+      <AnimatedPressable
+        style={[styles.addButton, animatedButtonStyles]}
+        entering={FadeInUp}
+      >
+        <Text style={{ color: "white", fontSize: 30 }}>+</Text>
+      </AnimatedPressable>
     </View>
   );
 };
@@ -93,6 +110,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flex: 1,
     padding: 20,
+    position: "relative",
+  },
+  addButton: {
+    alignItems: "center",
+    borderRadius: 40,
+    width: 80,
+    height: 80,
+    justifyContent: "center",
+    position: "absolute",
+    bottom: 20,
+    left: width / 2 - 40,
+    backgroundColor: "blue",
+    opacity: 0,
   },
 });
 

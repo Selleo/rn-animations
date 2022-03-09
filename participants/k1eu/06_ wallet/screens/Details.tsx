@@ -6,14 +6,12 @@ import Animated, { FadeInUp, FadeOutDown } from "react-native-reanimated";
 import store from "../store";
 import { type StackParams } from "../components/Navigator/Navigator";
 import { SharedElement } from "react-navigation-shared-element";
-import { useSharedValue } from "react-native-reanimated";
 import Card from "../components/Card";
 
 type RouteProps = StackScreenProps<StackParams, "Details">["route"];
 type NavigationProps = StackScreenProps<StackParams, "Details">["navigation"];
 
 const Details = () => {
-  const xd = useSharedValue(true);
   const {
     params: { id },
   } = useRoute<RouteProps>();
@@ -33,14 +31,15 @@ const Details = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <SharedElement id={`${cardData!.id}.card`}>
         <Card
+          //@ts-ignore
           data={cardData}
           index={0}
-          isListOpen={xd}
           onPress={handleNavigation}
         />
       </SharedElement>
       {cardData?.transactions.map((transaction, index) => (
         <Animated.View key={transaction.id} style={styles.transaction} entering={FadeInUp.delay(500 + 100 * index)} exiting={FadeOutDown}>
+          <View style={styles.image}/>
           <View>
             <Text style={styles.text}>{transaction.date}</Text>
           </View>
@@ -63,9 +62,18 @@ const styles = StyleSheet.create({
   transaction: {
     marginTop: 10,
     flexDirection: "row",
+    alignItems: "center",
+    justifyContent: 'space-around',
+    width: '100%',
   },
   text: {
     fontSize: 20,
+  },
+  image: {
+    width: 50,
+    height: 50,
+    backgroundColor: 'gray',
+    borderRadius: 10,
   }
 });
 
