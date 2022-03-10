@@ -67,6 +67,7 @@ function CustomDrawerContent(props) {
       let newVal = ctx.startY + event.translationY;
 
       iterator.value = parseInt(newVal);
+      console.log(iterator.value);
     },
   });
 

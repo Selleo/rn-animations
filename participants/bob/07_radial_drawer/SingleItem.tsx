@@ -22,11 +22,11 @@ const SingleItem = ({
     const left =
       center +
       radius.value *
-        Math.cos((2 * Math.PI * index) / numberOfItems + iterator.value / 40);
+        Math.cos((2 * Math.PI * index) / numberOfItems + iterator.value / 100);
     const topa =
       center +
       radius.value *
-        Math.sin((2 * Math.PI * index) / numberOfItems + iterator.value / 40);
+        Math.sin((2 * Math.PI * index) / numberOfItems + iterator.value / 100);
 
     return {
       top: topa,
