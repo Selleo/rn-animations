@@ -52,6 +52,10 @@ export const paths: Paths = {
       name: "06 Cards",
       component: lazy(() => import("@participants/bob/06_cards")),
     },
+    {
+      name: "07 Radial Drawer",
+      component: lazy(() => import("@participants/bob/07_radial_drawer")),
+    },
   ],
   elkubok: [],
   gosia: [
