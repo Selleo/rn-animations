@@ -56,6 +56,10 @@ export const paths: Paths = {
       name: "07 Radial Drawer",
       component: lazy(() => import("@participants/bob/07_radial_drawer")),
     },
+    {
+      name: "08 Fluid",
+      component: lazy(() => import("@participants/bob/08_fluid")),
+    },
   ],
   elkubok: [],
   gosia: [

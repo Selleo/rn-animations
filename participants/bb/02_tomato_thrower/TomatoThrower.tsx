@@ -82,12 +82,7 @@ const TomatoThrower = () => {
         }
       });
 
-      const duration = interpolate(
-        savedTomatoY.value,
-        [0, 1000],
-        [250, 2000],
-        Extrapolate.CLAMP
-      );
+      const duration = interpolate(savedTomatoY.value, [0, 1000], [250, 2000]);
 
       tomatoX.value = withTiming(TOMATO_X_POINT - savedTomatoX.value, {
         duration,
