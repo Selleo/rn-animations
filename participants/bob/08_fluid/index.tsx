@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   View,
   StyleSheet,
+  Text,
 } from "react-native";
 import Constants from "expo-constants";
 import { AntDesign } from "@expo/vector-icons";
@@ -12,10 +13,30 @@ import Animated, {
   interpolate,
   interpolateColor,
   useAnimatedStyle,
+  useDerivedValue,
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
+import { get, cloneDeep } from "lodash";
 import { SharedElementAnimatedValue } from "react-navigation-shared-element";
+const colors = [
+  {
+    initialBgColor: "#32A89C",
+    bgColor: "#000",
+    nextBgColor: "#7643A8",
+  },
+  {
+    initialBgColor: "#7643A8",
+    bgColor: "#7643A8",
+    nextBgColor: "#FFFFFF",
+  },
+  {
+    initialBgColor: "#221211",
+    bgColor: "#FFFFFF",
+    nextBgColor: "#32A89C",
+  },
+];
+
 const { width } = Dimensions.get("window");
 
 const AnimatedAntDesign = Animated.createAnimatedComponent(AntDesign);
@@ -39,10 +60,11 @@ type Screen = { [key: string]: string };
 
 interface IPropsCircle {
   onPress: () => void;
-  index: number;
+  index: SharedElementAnimatedValue;
   animatedValue: SharedElementAnimatedValue;
   animatedValue2: SharedElementAnimatedValue;
   screens: Screen[];
+  colors: SharedElementAnimatedValue;
 }
 
 const Circle: React.FC<IPropsCircle> = ({
@@ -50,58 +72,59 @@ const Circle: React.FC<IPropsCircle> = ({
   index,
   animatedValue,
   animatedValue2,
+  colors,
 }) => {
-  const { initialBgColor, nextBgColor, bgColor } = colors[index];
-  const initialBgColor_c = `${initialBgColor}`;
-  const bgColor_c = `${bgColor}`;
-
+  const colorsSV: any = useDerivedValue(() => {
+    return colors.value[index.value];
+  });
   const inputRange = [0, 0.001, 0.5, 0.501, 1];
-
   const constainerStyle = useAnimatedStyle(() => {
-    const backgroundColor = interpolateColor(
-      animatedValue2.value,
-      inputRange,
-      [
-        initialBgColor_c,
-        initialBgColor_c,
-        initialBgColor_c,
-        bgColor_c,
-        bgColor_c,
-      ],
-      "RGB"
-    );
-    return { backgroundColor: "red" };
+    const backgroundColor = interpolateColor(animatedValue2.value, inputRange, [
+      colorsSV.initialBgColor,
+      colorsSV.initialBgColor,
+      colorsSV.initialBgColor,
+      colorsSV.bgColor,
+      colorsSV.bgColor,
+    ]);
+    return { backgroundColor };
   });
 
   const circleStyle = useAnimatedStyle(() => {
-    // const dotBgColor = interpolateColor(
-    //   animatedValue2.value,
-    //   [0, 0.001, 0.5, 0.501, 0.9, 1],
-    //   [bgColor, bgColor, bgColor, initialBgColor, initialBgColor, nextBgColor]
-    // );
+    const dotBgColor = interpolateColor(
+      animatedValue2.value,
+      [0, 0.001, 0.5, 0.501, 0.9, 1],
+      [
+        colorsSV.bgColor,
+        colorsSV.bgColor,
+        colorsSV.bgColor,
+        colorsSV.initialBgColor,
+        colorsSV.initialBgColor,
+        colorsSV.nextBgColor,
+      ]
+    );
     return {
-      // backgroundColor: dotBgColor,
+      backgroundColor: dotBgColor,
       transform: [
         { perspective: 200 },
-        // {
-        //   rotateY: `${interpolate(
-        //     animatedValue2.value,
-        //     [0, 0.5, 1],
-        //     [0, -90, -180]
-        //   )}deg`,
-        // },
+        {
+          rotateY: `${interpolate(
+            animatedValue2.value,
+            [0, 0.5, 1],
+            [0, -90, -180]
+          )}deg`,
+        },
 
         {
           scale: interpolate(animatedValue2.value, [0, 0.5, 1], [1, 6, 1]),
         },
 
-        // {
-        //   translateX: `${interpolate(
-        //     animatedValue2.value,
-        //     [0, 0.5, 1],
-        //     [0, 50, 0]
-        //   )}%`,
-        // },
+        {
+          translateX: `${interpolate(
+            animatedValue2.value,
+            [0, 0.5, 1],
+            [0, 50, 0]
+          )}%`,
+        },
       ],
     };
   });
@@ -147,30 +170,13 @@ const Circle: React.FC<IPropsCircle> = ({
   );
 };
 
-const colors = [
-  {
-    initialBgColor: "#32A89C",
-    bgColor: "#121212",
-    nextBgColor: "#7643A8",
-  },
-  {
-    initialBgColor: "#121212",
-    bgColor: "#7643A8",
-    nextBgColor: "#FFFFFF",
-  },
-  {
-    initialBgColor: "#221211",
-    bgColor: "#FFFFFF",
-    nextBgColor: "#32A89C",
-  },
-];
-
 export default function App() {
+  const colorsSH = useSharedValue(colors);
   const animatedValue = useSharedValue<number>(0);
   const animatedValue2 = useSharedValue<number>(0);
   const sliderAnimatedValue = useSharedValue<number>(0);
   const inputRange = [...Array(screens.length).keys()];
-  const [index, setIndex] = React.useState(0);
+  const index = useSharedValue(0);
 
   const animate = (i: number) => {
     sliderAnimatedValue.value = withTiming(i, { duration: TEXT_DURATION });
@@ -182,9 +188,30 @@ export default function App() {
     animatedValue.value = 0;
     animatedValue2.value = 0;
 
-    animate((index + 1) % colors.length);
-    setIndex((index + 1) % colors.length);
+    animate((index.value + 1) % colors.length);
+    index.value = (index.value + 1) % colors.length;
   };
+
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          translateX: interpolate(
+            sliderAnimatedValue.value,
+            inputRange,
+            screens.map((_, i) => -i * width * 2)
+          ),
+        },
+      ],
+      opacity: interpolate(
+        sliderAnimatedValue.value,
+        [...Array(screens.length * 2 + 1).keys()].map((i) => i / 2),
+        [...Array(screens.length * 2 + 1).keys()].map((i) =>
+          i % 2 === 0 ? 1 : 0
+        )
+      ),
+    };
+  });
 
   return (
     <View style={{ flex: 1, justifyContent: "flex-start", paddingTop: 100 }}>
@@ -195,27 +222,15 @@ export default function App() {
         screens={screens}
         animatedValue={animatedValue}
         animatedValue2={animatedValue2}
+        colors={colorsSH}
       />
-      {/* <Animated.View
-        style={{
-          flexDirection: "row",
-          transform: [
-            {
-              translateX: interpolate(
-                sliderAnimatedValue.value,
-                inputRange,
-                screens.map((_, i) => -i * width * 2)
-              ),
-            },
-          ],
-          opacity: interpolate(
-            sliderAnimatedValue.value,
-            [...Array(screens.length * 2 + 1).keys()].map((i) => i / 2),
-            [...Array(screens.length * 2 + 1).keys()].map((i) =>
-              i % 2 === 0 ? 1 : 0
-            )
-          ),
-        }}
+      <Animated.View
+        style={[
+          {
+            flexDirection: "row",
+          },
+          animatedStyles,
+        ]}
       >
         {screens.slice(0, colors.length).map(({ title }, i) => {
           return (
@@ -228,7 +243,7 @@ export default function App() {
             </View>
           );
         })}
-      </Animated.View> */}
+      </Animated.View>
     </View>
   );
 }
