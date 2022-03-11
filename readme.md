@@ -195,8 +195,8 @@ We will review all projects together and choose the best solution / design / cod
 | PR                       | 11.03.2022 |
 | End                      | 11.03.2022 |
 | Who                      | BB         |
-| Next animation challenge | TBD        |
-| Winner                   | TBD        |
+| Next animation challenge | Bob        |
+| Winner                   | k1eu       |
 
 ### Goals
 
