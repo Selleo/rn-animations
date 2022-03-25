@@ -205,3 +205,22 @@ We will review all projects together and choose the best solution / design / cod
 - [ ] Add "fluid" animation - https://dribbble.com/shots/6654320-Animated-Onboarding-Screens
 - [ ] For code inspiration you can check https://www.youtube.com/watch?v=vQNg06Hf0MQ
 
+## [9] Week 8 - bob - Collapsible header - easy one!
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 25.03.2022 |
+| PR                       | 08.04.2022 |
+| End                      | 08.04.2022 |
+| Who                      | Bob        |
+| Next animation challenge | Bob        |
+| Winner                   |            |
+
+### Goals
+
+- Create FlatList with collabsible header
+- It should start with height of 250px and shrink into 100px and should start shrinking when user scroll more than 50% of the screen
+- Place a button in smaller version of the header to make it big again with bounce animation
+- Then again after scrolling half of the screen is should shrink
+- Transition should be smoth - and should follow scroll event - sample:  https://raw.githubusercontent.com/logovaser/animated-header-scroll-view/master/readme/demo.gif
+
