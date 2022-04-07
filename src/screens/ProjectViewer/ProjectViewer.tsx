@@ -27,7 +27,7 @@ function ProjectViewer() {
   return (
     <Suspense
       fallback={
-        <View>f
+        <View>
           <Text>Loading...</Text>
         </View>
       }
