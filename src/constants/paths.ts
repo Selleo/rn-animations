@@ -97,6 +97,14 @@ export const paths: Paths = {
       name: "Apartments Swipee",
       component: lazy(() => import("@participants/k1eu/05_apartments")),
     },
+    {
+      name: "Wallet",
+      component: lazy(() => import("@participants/k1eu/06_ wallet")),
+    },
+    {
+      name: "Liquid",
+      component: lazy(() => import("@participants/k1eu/08_liquid")),
+    },
   ],
   matro: [],
   monika: [
