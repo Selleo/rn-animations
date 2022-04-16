@@ -224,3 +224,23 @@ We will review all projects together and choose the best solution / design / cod
 - Then again after scrolling half of the screen is should shrink
 - Transition should be smoth - and should follow scroll event - sample:  https://raw.githubusercontent.com/logovaser/animated-header-scroll-view/master/readme/demo.gif
 
+
+## [10] Week 10 - monika - Animated button 
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 16.04.2022 |
+| PR                       | 16.04.2022 |
+| End                      | 16.05.2022 |
+| Who                      | monika     |
+| Next animation challenge | TBD        |
+| Winner                   |            |
+
+### Goals
+
+- Create an animated submit button
+- Button should be able to represent different states: not loaded, loading, success, error
+- Animation should smoothly go through this states 
+- Example1: https://pl.pinterest.com/pin/834432637223743712/?mt=login 
+- Example2 (easier): https://pl.pinterest.com/pin/834432637223744450/
+
