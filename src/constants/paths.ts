@@ -30,6 +30,10 @@ export const paths: Paths = {
       name: "Liquid",
       component: lazy(() => import("@participants/bb/08_liquid")),
     },
+    {
+      name: "Header",
+      component: lazy(() => import("@participants/bb/09_header")),
+    },
   ],
   bob: [
     {
