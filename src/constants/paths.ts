@@ -121,6 +121,10 @@ export const paths: Paths = {
       name: "Liquid",
       component: lazy(() => import("@participants/k1eu/08_liquid")),
     },
+    {
+      name: "Collapse",
+      component: lazy(() => import("@participants/k1eu/09_collapse")),
+    },
   ],
   matro: [],
   monika: [
