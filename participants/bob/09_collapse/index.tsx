@@ -6,17 +6,12 @@ import {
   StyleSheet,
   Text,
 } from "react-native";
-import Constants from "expo-constants";
-import { AntDesign } from "@expo/vector-icons";
 import Animated, {
   interpolate,
-  interpolateColor,
   useAnimatedScrollHandler,
   useAnimatedStyle,
-  useDerivedValue,
   useSharedValue,
   withSpring,
-  withTiming,
 } from "react-native-reanimated";
 import { times } from "lodash";
 import { useCallback } from "react";
@@ -28,7 +23,7 @@ export default function App() {
   const flatListData = React.useMemo(() => {
     const data: { id: number }[] = [];
 
-    times(20, (index) => data.push({ id: index }));
+    times(50, (index) => data.push({ id: index }));
     return data;
   }, []);
 
@@ -58,8 +53,9 @@ export default function App() {
         [0, 0, 0, 1, 1]
       ),
       height: 40,
-      width: 40,
-      backgroundColor: "red",
+      backgroundColor: "white",
+      borderRadius: 20,
+      padding: 10,
     };
   });
 
@@ -72,8 +68,7 @@ export default function App() {
   }, []);
 
   const bounceBack = () => {
-    console.log("bounce back");
-    setOffset.value = -translationY.value;
+    setOffset.value = withSpring(-translationY.value);
     translationY.value = withSpring(0);
   };
 

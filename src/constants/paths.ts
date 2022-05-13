@@ -68,6 +68,14 @@ export const paths: Paths = {
       name: "08 Fluid",
       component: lazy(() => import("@participants/bob/08_fluid")),
     },
+    {
+      name: "09 Collapse",
+      component: lazy(() => import("@participants/bob/09_collapse")),
+    },
+    {
+      name: "10 Button",
+      component: lazy(() => import("@participants/bob/10_button")),
+    },
   ],
   elkubok: [],
   gosia: [
