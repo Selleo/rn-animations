@@ -148,6 +148,12 @@ export const paths: Paths = {
       name: "Radial Menu",
       component: lazy(() => import("@participants/monika/07_radial_menu")),
     },
+    {
+      name: "Collapsible header",
+      component: lazy(
+        () => import("@participants/monika/09_collapsibleHeader")
+      ),
+    },
   ],
 };
 
