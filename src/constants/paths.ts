@@ -30,6 +30,10 @@ export const paths: Paths = {
       name: "Liquid",
       component: lazy(() => import("@participants/bb/08_liquid")),
     },
+    {
+      name: "Header",
+      component: lazy(() => import("@participants/bb/09_header")),
+    },
   ],
   bob: [
     {
@@ -59,6 +63,18 @@ export const paths: Paths = {
     {
       name: "07 Radial Drawer",
       component: lazy(() => import("@participants/bob/07_radial_drawer")),
+    },
+    {
+      name: "08 Fluid",
+      component: lazy(() => import("@participants/bob/08_fluid")),
+    },
+    {
+      name: "09 Collapse",
+      component: lazy(() => import("@participants/bob/09_collapse")),
+    },
+    {
+      name: "10 Button",
+      component: lazy(() => import("@participants/bob/10_button")),
     },
   ],
   elkubok: [],
@@ -112,7 +128,7 @@ export const paths: Paths = {
     {
       name: "Button",
       component: lazy(() => import("@participants/k1eu/10_button")),
-    },
+    }
   ],
   matro: [],
   monika: [

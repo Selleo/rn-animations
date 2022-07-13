@@ -205,7 +205,7 @@ We will review all projects together and choose the best solution / design / cod
 - [ ] Add "fluid" animation - https://dribbble.com/shots/6654320-Animated-Onboarding-Screens
 - [ ] For code inspiration you can check https://www.youtube.com/watch?v=vQNg06Hf0MQ
 
-## [9] Week 8 - bob - Collapsible header - easy one!
+## [9] Week 9 - bob - Collapsible header - easy one!
 
 |                          |            |
 | ------------------------ | ---------- |
@@ -214,7 +214,7 @@ We will review all projects together and choose the best solution / design / cod
 | End                      | 08.04.2022 |
 | Who                      | Bob        |
 | Next animation challenge | Bob        |
-| Winner                   |            |
+| Winner                   | monika     |
 
 ### Goals
 
@@ -224,3 +224,46 @@ We will review all projects together and choose the best solution / design / cod
 - Then again after scrolling half of the screen is should shrink
 - Transition should be smoth - and should follow scroll event - sample:  https://raw.githubusercontent.com/logovaser/animated-header-scroll-view/master/readme/demo.gif
 
+
+## [10] Week 10 - monika - Animated button 
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 16.04.2022 |
+| PR                       | 16.04.2022 |
+| End                      | 16.05.2022 |
+| Who                      | monika     |
+| Next animation challenge | k1eu       |
+| Winner                   | bob, bb, k1eu |
+
+### Goals
+
+- Create an animated submit button
+- Button should be able to represent different states: not loaded, loading, success, error
+- Animation should smoothly go through this states 
+- Example1: https://pl.pinterest.com/pin/834432637223743712/?mt=login 
+- Example2 (easier): https://pl.pinterest.com/pin/834432637223744450/
+
+## [11] Week 11 - k1eu - Tinder with skia spice 
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 25.06.2022 |
+| PR                       | 08.07.2022 |
+| End                      | 08.07.2022 |
+| Who                      | TBD        |
+| Next animation challenge | TBD        |
+| Winner                   |            |
+
+### Goals
+
+- Tinder Swipe!
+- Main view should have centered card with a photo (and maybe some info about a person)
+- Card should have ability to be swiped left & right with some rotate animation
+- Additionaly let's try skia! Card should have a border with some kind of beautiful gradient 🥰
+- * for additional style points we can incorporate a `details view` using shared element transitions
+- Example with skia gradient: https://www.youtube.com/watch?v=pVesCl7TY8A
+- Example tinder cards (right side):
+<p>
+  <img src="https://cdn.dribbble.com/users/390458/screenshots/14489959/media/bd35083be38692fbc8ee24e1934a09ac.png?compress=1&resize=1600x1200&vertical=top" width="350">
+</p>
