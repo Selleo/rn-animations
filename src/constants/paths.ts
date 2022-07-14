@@ -137,6 +137,12 @@ export const paths: Paths = {
       component: lazy(() => import("@participants/monika/06_wallet")),
     },
   ],
+  damcyk: [
+    {
+      name: "Tinder",
+      component: lazy(() => import("@participants/damcyk/11_tinder_swipe")),
+    },
+  ],
 };
 
 type Paths = {

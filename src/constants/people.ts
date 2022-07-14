@@ -27,6 +27,10 @@ export const People: People = {
     displayName: "monika",
     img: require("@assets/participants/monika.png"),
   },
+  damcyk: {
+    displayName: "damcyk",
+    img: require("@assets/participants/damcyk.png"),
+  },
 };
 
 type People = {
