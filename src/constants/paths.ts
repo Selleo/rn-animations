@@ -162,6 +162,10 @@ export const paths: Paths = {
         () => import("@participants/monika/09_collapsibleHeader")
       ),
     },
+    {
+      name: "Tinder Swipe",
+      component: lazy(() => import("@participants/monika/11_TinderSwipe")),
+    },
   ],
 };
 
