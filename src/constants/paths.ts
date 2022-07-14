@@ -38,6 +38,10 @@ export const paths: Paths = {
       name: "Button",
       component: lazy(() => import("@participants/bb/10_button")),
     },
+    {
+      name: "Tinder",
+      component: lazy(() => import("@participants/bb/11_tinder")),
+    },
   ],
   bob: [
     {
