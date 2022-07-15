@@ -1,50 +1,22 @@
-// import Animated, {
-//   useSharedValue,
-//   withTiming,
-//   useAnimatedStyle,
-//   Easing,
-// } from "react-native-reanimated";
-import { View } from "react-native";
 import React from "react";
+import { StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-import Button from "./participants/ElKubok/01_pump_me";
+import { MainStack } from "@components/MainStack";
 
-export default function AnimatedStyleUpdateExample() {
-  // const randomWidth = useSharedValue(10);
-
-  // const config = {
-  // duration: 500,
-  // easing: Easing.bezier(0.5, 0.01, 0, 1),
-  // };
-
-  // const style = useAnimatedStyle(() => {
-  //   return {
-  //     width: withTiming(randomWidth.value, config),
-  //   };
-  // });
-
+export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
-    >
-      {/* <Animated.View
-        style={[
-          { width: 100, height: 80, backgroundColor: "black", margin: 30 },
-          style,
-        ]}
-      /> */}
-      {/* <Button
-        title="toggle"
-        onPress={() => {
-          randomWidth.value = Math.random() * 350;
-        }}
-      /> */}
-      <Button />
-    </View>
+    <GestureHandlerRootView style={styles.main}>
+      <NavigationContainer>
+        <MainStack />
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
+
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+  },
+});
