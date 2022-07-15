@@ -37,7 +37,7 @@ function AvatarHive() {
     <View style={styles.container}>
       {renderRow(0, 3)}
       {renderRow(3, 5)}
-      {renderRow(5, 7)}
+      {renderRow(5, 8)}
     </View>
   );
 }

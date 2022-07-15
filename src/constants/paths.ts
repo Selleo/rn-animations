@@ -163,6 +163,12 @@ export const paths: Paths = {
       ),
     },
   ],
+  damcyk: [
+    {
+      name: "Tinder",
+      component: lazy(() => import("@participants/damcyk/11_tinder_swipe")),
+    },
+  ],
 };
 
 type Paths = {
