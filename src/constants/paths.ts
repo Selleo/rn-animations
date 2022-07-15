@@ -26,6 +26,18 @@ export const paths: Paths = {
       name: "Wallet",
       component: lazy(() => import("@participants/bb/06_wallet")),
     },
+    {
+      name: "Liquid",
+      component: lazy(() => import("@participants/bb/08_liquid")),
+    },
+    {
+      name: "Header",
+      component: lazy(() => import("@participants/bb/09_header")),
+    },
+    {
+      name: "Button",
+      component: lazy(() => import("@participants/bb/10_button")),
+    },
   ],
   bob: [
     {
@@ -109,8 +121,26 @@ export const paths: Paths = {
       name: "Apartments Swipee",
       component: lazy(() => import("@participants/k1eu/05_apartments")),
     },
+    {
+      name: "Wallet",
+      component: lazy(() => import("@participants/k1eu/06_ wallet")),
+    },
+    {
+      name: "Liquid",
+      component: lazy(() => import("@participants/k1eu/08_liquid")),
+    },
+    {
+      name: "Collapse",
+      component: lazy(() => import("@participants/k1eu/09_collapse")),
+    },
   ],
   matro: [],
+  monika: [
+    {
+      name: "Wallet",
+      component: lazy(() => import("@participants/monika/06_wallet")),
+    },
+  ],
 };
 
 type Paths = {
