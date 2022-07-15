@@ -136,6 +136,10 @@ export const paths: Paths = {
       name: "Wallet",
       component: lazy(() => import("@participants/monika/06_wallet")),
     },
+    {
+      name: "Radial Menu",
+      component: lazy(() => import("@participants/monika/07_radial_menu")),
+    },
   ],
 };
 
