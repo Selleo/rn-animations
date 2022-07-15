@@ -89,7 +89,12 @@ export const paths: Paths = {
       component: lazy(() => import("@participants/bob/11_tinder")),
     },
   ],
-  elkubok: [],
+  elkubok: [
+    {
+      name: "Pump me",
+      component: lazy(() => import("@participants/ElKubok/01_pump_me")),
+    },
+  ],
   gosia: [
     {
       name: "01_pump_me",
