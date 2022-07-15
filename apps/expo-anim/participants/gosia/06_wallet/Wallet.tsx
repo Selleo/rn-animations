@@ -10,18 +10,17 @@ import { CardView } from "@participants/gosia/06_wallet/CardView";
 import { FAB } from "react-native-paper";
 import { StyleSheet } from "react-native";
 
-const faker = require("faker");
 var randomColor = require("randomcolor"); // import the script
 
 const createCardTransactions = (): Transaction[] => {
   const fake: string[] = new Array(20).fill("test");
   const data: Transaction[] = fake.map(() => ({
-    id: faker.datatype.uuid(),
-    name: faker.company.companyName(),
-    currency: faker.finance.currencyCode(),
-    avatar: faker.image.business(),
-    amount: faker.finance.amount(),
-    date: faker.datatype.datetime(),
+    id: 'faker.datatype.uuid()',
+    name: 'faker.company.companyName()',
+    currency: 'faker.finance.currencyCode()',
+    avatar: 'faker.image.business()',
+    amount: 'faker.finance.amount()',
+    date: 'faker.datatype.datetime()',
   }));
 
   return data;
