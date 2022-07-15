@@ -28,6 +28,7 @@ const { height } = Dimensions.get("screen");
 
 export default () => {
   const state = useSharedValue(0);
+  // 0 normal, 1 loading, 2 failure, 4 success
   const pulsate = useSharedValue(1);
   const spin = useSharedValue(0);
 
@@ -43,7 +44,6 @@ export default () => {
   });
 
   // 0 normal, 1 loading, 2 failure, 4 success
-
   const wrapperStyle = useAnimatedStyle(() => {
     const backgroundColor = interpolateColor(
       state.value,
