@@ -129,7 +129,7 @@ We will review all projects together and choose the best solution / design / cod
 - [ ] Create Aparments Card slider with where both previous and next cards are visible (just a little)
 - [ ] When the user swipes, next card should go to the middle and scale just a bit
 - [ ] When the use clicks there should be an enter in animation which connects with the previous screen (so it looks smooth :sweetJesus:)
-- [ ] Optional (gif 1)* - Create a view that rolls out from below the tab navigator (we can call it `My favourites` - content doesn't matter) 
+- [ ] Optional (gif 1)\* - Create a view that rolls out from below the tab navigator (we can call it `My favourites` - content doesn't matter)
 - [ ] There are examples below :)
 
 <p>
@@ -178,14 +178,13 @@ We will review all projects together and choose the best solution / design / cod
 - [ ] Each menu element should have an icon and label
 - [ ] The radial menu should be an infinite scroll (when the user reach the last menu item, the first element appears again)
 - [ ] When menu item is clicked, app should navigate to selected screen and drawer should smoothly hide
-- [ ] Example of drawer: https://dribbble.com/shots/6155653-Menu-Design 
+- [ ] Example of drawer: https://dribbble.com/shots/6155653-Menu-Design
 - [ ] Example of animation with radial menu: https://dribbble.com/shots/4574257-Porsche-Passport-Menu-Interaction
 
 <p>
   <img src="https://cdn.dribbble.com/users/1106278/screenshots/6155653/dribbble_28_feb_2.png" width="350">
   <img src="https://cdn.dribbble.com/users/2024752/screenshots/4574257/passport-dribbble-01.gif" width="350">
 </p>
-
 
 ## [8] Week 8 - BB - Liquid animation
 
@@ -222,37 +221,36 @@ We will review all projects together and choose the best solution / design / cod
 - It should start with height of 250px and shrink into 100px and should start shrinking when user scroll more than 50% of the screen
 - Place a button in smaller version of the header to make it big again with bounce animation
 - Then again after scrolling half of the screen is should shrink
-- Transition should be smoth - and should follow scroll event - sample:  https://raw.githubusercontent.com/logovaser/animated-header-scroll-view/master/readme/demo.gif
+- Transition should be smoth - and should follow scroll event - sample: https://raw.githubusercontent.com/logovaser/animated-header-scroll-view/master/readme/demo.gif
 
+## [10] Week 10 - monika - Animated button
 
-## [10] Week 10 - monika - Animated button 
-
-|                          |            |
-| ------------------------ | ---------- |
-| Start                    | 16.04.2022 |
-| PR                       | 16.04.2022 |
-| End                      | 16.05.2022 |
-| Who                      | monika     |
-| Next animation challenge | k1eu       |
+|                          |               |
+| ------------------------ | ------------- |
+| Start                    | 16.04.2022    |
+| PR                       | 16.04.2022    |
+| End                      | 16.05.2022    |
+| Who                      | monika        |
+| Next animation challenge | k1eu          |
 | Winner                   | bob, bb, k1eu |
 
 ### Goals
 
 - Create an animated submit button
 - Button should be able to represent different states: not loaded, loading, success, error
-- Animation should smoothly go through this states 
-- Example1: https://pl.pinterest.com/pin/834432637223743712/?mt=login 
+- Animation should smoothly go through this states
+- Example1: https://pl.pinterest.com/pin/834432637223743712/?mt=login
 - Example2 (easier): https://pl.pinterest.com/pin/834432637223744450/
 
-## [11] Week 11 - k1eu - Tinder with skia spice 
+## [11] Week 11 - k1eu - Tinder with skia spice
 
 |                          |            |
 | ------------------------ | ---------- |
 | Start                    | 25.06.2022 |
 | PR                       | 08.07.2022 |
 | End                      | 08.07.2022 |
-| Who                      | TBD        |
-| Next animation challenge | TBD        |
+| Who                      | kieu       |
+| Next animation challenge | matro      |
 | Winner                   |            |
 
 ### Goals
@@ -261,9 +259,31 @@ We will review all projects together and choose the best solution / design / cod
 - Main view should have centered card with a photo (and maybe some info about a person)
 - Card should have ability to be swiped left & right with some rotate animation
 - Additionaly let's try skia! Card should have a border with some kind of beautiful gradient 🥰
-- * for additional style points we can incorporate a `details view` using shared element transitions
+- - for additional style points we can incorporate a `details view` using shared element transitions
 - Example with skia gradient: https://www.youtube.com/watch?v=pVesCl7TY8A
 - Example tinder cards (right side):
 <p>
   <img src="https://cdn.dribbble.com/users/390458/screenshots/14489959/media/bd35083be38692fbc8ee24e1934a09ac.png?compress=1&resize=1600x1200&vertical=top" width="350">
 </p>
+
+## [11] Week 12 - matro - Jumping balls squashing and stretching
+
+|                          |            |
+| ------------------------ | ---------- |
+| Start                    | 04.08.2022 |
+| PR                       | 12.08.2022 |
+| End                      | 12.08.2022 |
+| Who                      | matro      |
+| Next animation challenge | TBD        |
+| Winner                   |            |
+
+### Goals
+
+- Let's experiment with animations to play with illusion of elastic bouncing balls that can be used for various toggle elements or loaders
+- Create 4 variants of balls jumping in a row next to each other
+- 1st red ball should jump with no shape transformations of the ball AND with constant speed
+- 2nd green ball should jump with no shape transformations, BUT accelerating the closer to the floor level it is (imitating gravity)
+- 3rd blue ball should jump with shape transformation (squashing horizontally when hitting the floor level and stretching vertically halfway between highest and lowest points of the jump), BUT with constant speed
+- 4th black ball should both dynamically change shape AND speed imitating elastic jumping ball
+- Balls should be jumping next to each other in line at the 1/3 view height (highest point of the jump at 2/3 vh)
+- Example of such animations: https://www.instagram.com/p/CelyJH8jWYX/
