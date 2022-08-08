@@ -178,6 +178,12 @@ export const paths: Paths = {
       component: lazy(() => import("@participants/damcyk/11_tinder_swipe")),
     },
   ],
+  michal: [
+    {
+      name: "Jumping ball",
+      component: lazy(() => import("@participants/michal/12_jumping_ball")),
+    },
+  ],
 };
 
 type Paths = {
