@@ -23,7 +23,7 @@ const Card = () => {
   const { width, height } = useWindowDimensions();
   const font = useFont(require("@assets/fonts/Roboto-Regular.ttf"), 12);
   const image = useImage(require("./kajetan-boruta.png"));
-  // const image = useImage(require("./bartosz-boruta.png"));
+  const image2 = useImage(require("./bartosz-boruta.png"));
 
   const progress = useSharedValue(0);
 
@@ -76,6 +76,15 @@ const Card = () => {
             <Image
               image={image}
               x={0}
+              y={0}
+              width={rectSize.width / 2}
+              height={rectSize.height}
+            />
+          )}
+          {image2 && (
+            <Image
+              image={image2}
+              x={50}
               y={0}
               width={rectSize.width / 2}
               height={rectSize.height}
