@@ -151,7 +151,12 @@ export const paths: Paths = {
       component: lazy(() => import("@participants/k1eu/11_tinder")),
     },
   ],
-  matro: [],
+  matro: [
+    {
+      name: "Cards",
+      component: lazy(() => import("@participants/matro/6-cards-challenge")),
+    },
+  ],
   monika: [
     {
       name: "Wallet",
