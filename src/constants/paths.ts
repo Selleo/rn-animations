@@ -182,6 +182,10 @@ export const paths: Paths = {
       name: "Tinder",
       component: lazy(() => import("@participants/damcyk/11_tinder_swipe")),
     },
+    {
+      name: "Bouncing Ball",
+      component: lazy(() => import("@participants/damcyk/12_bouncing_ball")),
+    },
   ],
   michal: [
     {
