@@ -95,12 +95,12 @@ const Card = ({ enabled, index, person, onRemove }) => {
         translateX: xPos.value,
       },
       {
-        rotateZ: interpolate(
+        rotateZ: `${interpolate(
           xPos.value,
           [-width / 2, 0, width / 2],
           [-0.2, 0, 0.2],
           Extrapolate.CLAMP
-        ),
+        )}deg`,
       },
     ],
   }));

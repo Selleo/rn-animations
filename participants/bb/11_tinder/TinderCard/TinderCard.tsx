@@ -86,7 +86,7 @@ const TinderCard = ({
         {
           translateX: number;
           translateY: number;
-          rotateZ: number;
+          rotateZ: string;
           scale: number;
         }
       ];
@@ -103,12 +103,12 @@ const TinderCard = ({
             ),
           },
           {
-            rotateZ: interpolate(
+            rotateZ: `${interpolate(
               x.value,
               [-width / 2, 0, width / 2],
               [-0.2, 0, 0.2],
               Extrapolate.CLAMP
-            ),
+            )}deg`,
           },
           {
             scale: interpolate(
