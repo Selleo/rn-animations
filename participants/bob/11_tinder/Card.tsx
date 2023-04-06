@@ -45,7 +45,7 @@ export const Card: FC<IProps> = ({ person, onChoose }) => {
           translateY: y.value,
         },
         { translateX: x.value },
-        { rotateZ: x.value / 300 },
+        { rotateZ: `${x.value / 300}deg` },
         { scale: 1 + Math.abs(x.value / 1000) },
       ],
     };
