@@ -185,6 +185,10 @@ export const paths: Paths = {
   ],
   michal: [
     {
+      name: "Wallet",
+      component: lazy(() => import("@participants/michal/06_wallet")),
+    },
+    {
       name: "Jumping ball",
       component: lazy(() => import("@participants/michal/12_jumping_ball")),
     },
