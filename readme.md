@@ -266,7 +266,7 @@ We will review all projects together and choose the best solution / design / cod
   <img src="https://cdn.dribbble.com/users/390458/screenshots/14489959/media/bd35083be38692fbc8ee24e1934a09ac.png?compress=1&resize=1600x1200&vertical=top" width="350">
 </p>
 
-## [11] Week 12 - matro - Jumping balls squashing and stretching
+## [12] Week 12 - matro - Jumping balls squashing and stretching
 
 |                          |            |
 | ------------------------ | ---------- |
