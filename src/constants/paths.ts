@@ -192,6 +192,10 @@ export const paths: Paths = {
       name: "Jumping ball",
       component: lazy(() => import("@participants/michal/12_jumping_ball")),
     },
+    {
+      name: "Swipe list items",
+      component: lazy(() => import("@participants/michal/14_swipe_list_items")),
+    },
   ],
 };
 
